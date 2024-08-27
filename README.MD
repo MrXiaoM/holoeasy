@@ -20,14 +20,14 @@ Lightweight replacement for Holographic Display. HoloEasy only uses packets inst
 <dependency>
     <groupId>com.github.MrXiaoM</groupId>
     <artifactId>holoeasy</artifactId>
-    <version>3.4.3</version>
+    <version>3.4.3-1</version>
 </dependency>
 ```
 
 #### Gradle
 
 ```kotlin
-implementation("com.github.MrXiaoM:holoeasy:3.4.3")
+implementation("com.github.MrXiaoM:holoeasy:3.4.3-1")
 
 ```
 

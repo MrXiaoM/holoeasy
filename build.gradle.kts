@@ -13,7 +13,7 @@ java {
 
 allprojects {
     group = "org.holoeasy"
-    version = "3.4.3"
+    version = "3.4.3-1"
 
     repositories {
         mavenCentral()
