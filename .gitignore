@@ -114,4 +114,7 @@ run/
 /example-plugin/build/
 /api/build/
 
+!gradle-wrapper.jar
+!libs/*.jar
 
+.gradle/
