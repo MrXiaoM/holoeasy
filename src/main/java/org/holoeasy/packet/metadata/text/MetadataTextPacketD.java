@@ -12,6 +12,7 @@ import static org.holoeasy.util.ClosedRange.rangeSingle;
 
 public class MetadataTextPacketD implements IMetadataTextPacket {
     public static final MetadataTextPacketD INSTANCE = new MetadataTextPacketD();
+
     @Override
     public List<org.holoeasy.util.ClosedRange<VersionEnum>> versionSupport() {
         return rangeSingle(VersionEnum.V1_19, VersionEnum.V1_19);

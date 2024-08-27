@@ -11,7 +11,9 @@ import org.jetbrains.annotations.Nullable;
 
 public class Service {
     public static final Service INSTANCE = new Service();
-    private Service() {}
+
+    private Service() {
+    }
 
     public enum RegistrationType {
         PLUGIN,
@@ -20,11 +22,13 @@ public class Service {
 
     // might be Plugin as well
     private final ThreadLocal<Pair<RegistrationType, Object>> staticPool = new ThreadLocal<>();
+
     public ThreadLocal<Pair<RegistrationType, Object>> getStaticPool() {
         return staticPool;
     }
 
     private final ThreadLocal<HologramConfig> staticHologram = new ThreadLocal<>();
+
     public ThreadLocal<HologramConfig> getStaticHologram() {
         return staticHologram;
     }
@@ -36,7 +40,7 @@ public class Service {
     }
 
 
-    private HologramConfig getStaticHolo()  {
+    private HologramConfig getStaticHolo() {
         HologramConfig holo = staticHologram.get();
         if (holo == null) throw new RuntimeException("You must call config() inside hologram block");
         return holo;
@@ -49,6 +53,7 @@ public class Service {
             config.loader = new TextBlockStandardLoader();
         }
     }
+
     public ITextLine textline(String text) {
         return textline(text, false, null, null, null);
     }

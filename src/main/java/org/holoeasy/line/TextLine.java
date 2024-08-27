@@ -21,11 +21,11 @@ public class TextLine implements ITextLine {
     private boolean firstRender = true;
 
     public TextLine(
-                    Plugin plugin,
-                    String obj,
-                    Object[] args,
-                    boolean clickable
-            ) {
+            Plugin plugin,
+            String obj,
+            Object[] args,
+            boolean clickable
+    ) {
         this.args = args;
         this.clickable = clickable;
         line = new Line(plugin, EntityType.ARMOR_STAND);
@@ -85,7 +85,7 @@ public class TextLine implements ITextLine {
         Object[] res = new Object[args.length];
         for (int i = 0; i < args.length; i++) {
             Object tmp = args[i];
-            if(tmp instanceof MutableState) {
+            if (tmp instanceof MutableState) {
                 MutableState state = (MutableState) tmp;
                 res[i] = state.get();
                 if (firstRender) {
@@ -181,7 +181,8 @@ public class TextLine implements ITextLine {
             0x02  = is already showed but is empty
             0x03  = is hided and isn't changed      */
         switch (spawnBefore) {
-            case 0x03: break;
+            case 0x03:
+                break;
             case 0x02: {
                 line.destroy(player);
                 isEmpty = true;

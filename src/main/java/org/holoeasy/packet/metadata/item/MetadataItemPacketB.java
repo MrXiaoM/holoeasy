@@ -4,7 +4,6 @@ import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
 import com.comphenix.protocol.wrappers.WrappedDataWatcher;
 import org.bukkit.inventory.ItemStack;
-import org.holoeasy.util.ClosedRange;
 import org.holoeasy.util.VersionEnum;
 
 import java.util.List;
@@ -17,6 +16,7 @@ import static org.holoeasy.util.ClosedRange.rangeSingle;
 
 public class MetadataItemPacketB implements IMetadataItemPacket {
     public static final MetadataItemPacketB INSTANCE = new MetadataItemPacketB();
+
     @Override
     public List<org.holoeasy.util.ClosedRange<VersionEnum>> versionSupport() {
         return rangeSingle(VersionEnum.V1_9, VersionEnum.V1_12);

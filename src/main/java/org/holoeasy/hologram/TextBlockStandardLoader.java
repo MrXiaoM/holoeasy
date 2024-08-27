@@ -35,8 +35,12 @@ public class TextBlockStandardLoader implements IHologramLoader {
 
             if (j > 0) {
                 switch (lines[j - 1].getType()) {
-                    case ITEM_LINE: up = -1.5; break;
-                    case BLOCK_LINE: up = -0.19; break;
+                    case ITEM_LINE:
+                        up = -1.5;
+                        break;
+                    case BLOCK_LINE:
+                        up = -0.19;
+                        break;
                     case EXTERNAL:
                     case TEXT_LINE:
                     case CLICKABLE_TEXT_LINE:

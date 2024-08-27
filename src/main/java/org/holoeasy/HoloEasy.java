@@ -39,18 +39,18 @@ public class HoloEasy {
     }
 
     public static IHologramPool startInteractivePool(
-        Plugin plugin,
-        double spawnDistance,
-        float minHitDistance,
-        float maxHitDistance,
-        ClickAction clickAction
+            Plugin plugin,
+            double spawnDistance,
+            float minHitDistance,
+            float maxHitDistance,
+            ClickAction clickAction
     ) {
         HologramPool simplepool = new HologramPool(plugin, spawnDistance);
         return new InteractiveHologramPool(
-            simplepool,
-            minHitDistance,
-            maxHitDistance,
-            clickAction
+                simplepool,
+                minHitDistance,
+                maxHitDistance,
+                clickAction
         );
     }
 

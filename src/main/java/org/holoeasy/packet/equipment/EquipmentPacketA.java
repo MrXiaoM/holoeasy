@@ -12,6 +12,7 @@ import static org.holoeasy.util.ClosedRange.rangeSingle;
 
 public class EquipmentPacketA implements IEquipmentPacket {
     public static final EquipmentPacketA INSTANCE = new EquipmentPacketA();
+
     @Override
     public List<org.holoeasy.util.ClosedRange<VersionEnum>> versionSupport() {
         return rangeSingle(VersionEnum.V1_8, VersionEnum.V1_8);

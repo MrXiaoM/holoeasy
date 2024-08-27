@@ -16,6 +16,7 @@ import static org.holoeasy.util.ClosedRange.rangeSingle;
 
 public class MetadataItemPacketC implements IMetadataItemPacket {
     public static final MetadataItemPacketC INSTANCE = new MetadataItemPacketC();
+
     @Override
     public List<org.holoeasy.util.ClosedRange<VersionEnum>> versionSupport() {
         return rangeSingle(VersionEnum.V1_13, VersionEnum.V1_18);

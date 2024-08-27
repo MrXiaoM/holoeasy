@@ -10,7 +10,8 @@ import org.holoeasy.util.VersionEnum;
 import org.holoeasy.util.VersionUtil;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.*;
+import java.util.List;
+import java.util.UUID;
 
 import static java.lang.Math.max;
 import static java.lang.Math.min;
@@ -19,6 +20,7 @@ import static org.holoeasy.util.ClosedRange.rangeSingle;
 
 public class SpawnPacketC implements ISpawnPacket {
     public static final SpawnPacketC INSTANCE = new SpawnPacketC();
+
     @Override
     public List<org.holoeasy.util.ClosedRange<VersionEnum>> versionSupport() {
         return rangeSingle(VersionEnum.V1_16, VersionEnum.V1_18);
@@ -27,7 +29,7 @@ public class SpawnPacketC implements ISpawnPacket {
     @Override
     public PacketContainer spawn(int entityId, EntityType entityType, Location location, @Nullable Plugin plugin) {
         int extraData = 1;
-        if(entityType == EntityType.ARMOR_STAND) {
+        if (entityType == EntityType.ARMOR_STAND) {
             return packet(PacketType.Play.Server.SPAWN_ENTITY_LIVING, packet -> {
                 packet.getModifier().writeDefaults();
                 StructureModifier<Integer> integers = packet.getIntegers();
@@ -74,6 +76,7 @@ public class SpawnPacketC implements ISpawnPacket {
         */
         return (int) (clamp(velocity, -3.9, 3.9) * 8000);
     }
+
     private double clamp(double targetNum, double min, double max) {
         // Makes sure a number is within a range
         return max(min, min(targetNum, max));

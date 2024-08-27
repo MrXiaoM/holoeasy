@@ -7,5 +7,6 @@ public interface IMetadataTextPacket extends IPacket {
     default PacketContainer metadata(int entityId, String nameTag) {
         return metadata(entityId, nameTag, true);
     }
+
     PacketContainer metadata(int entityId, String nameTag, boolean invisible);
 }

@@ -29,7 +29,7 @@ public class MetadataTextPacketC implements IMetadataTextPacket {
             setChatComponent(watcher, 2, nameTag);
             setBool(watcher, 3, true);
         }
-        return packet(PacketType.Play.Server.ENTITY_METADATA, packet ->  {
+        return packet(PacketType.Play.Server.ENTITY_METADATA, packet -> {
             packet.getIntegers().write(0, entityId);
             packet.getWatchableCollectionModifier().write(0, watcher.getWatchableObjects());
         });

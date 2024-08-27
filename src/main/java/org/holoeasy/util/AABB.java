@@ -20,8 +20,9 @@ package org.holoeasy.util;
 
 import org.bukkit.Location;
 import org.bukkit.util.Vector;
-import java.util.*;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Objects;
 
 import static java.lang.Math.sqrt;
 
@@ -34,13 +35,15 @@ import static java.lang.Math.sqrt;
 public class AABB {
     private Vec3D min;
     private Vec3D max;
+
     /**
-    * Creates a new instance from a minimum point and a maximum point.
-    */
+     * Creates a new instance from a minimum point and a maximum point.
+     */
     public AABB(Vec3D min, Vec3D max) {
         this.min = min;
         this.max = max;
     }
+
     /**
      * Create a new com.github.unldenis.hologram.util.AABB from a given block.
      *
@@ -62,8 +65,8 @@ public class AABB {
 
     /**
      * Calculates intersection with the given ray between a certain distance interval.
-     *
-     *
+     * <p>
+     * <p>
      * Ray-box intersection is using IEEE numerical properties to ensure the test is both robust and
      * efficient, as described in:
      * <br></br>
@@ -268,11 +271,13 @@ public class AABB {
     public static class Ray3D extends Vec3D {
         Vec3D origin;
         Vec3D direction;
-        public Ray3D(Vec3D origin, Vec3D direction){
+
+        public Ray3D(Vec3D origin, Vec3D direction) {
             super(origin);
             this.origin = origin;
             this.direction = direction.normalize();
         }
+
         /**
          * Construct a 3D ray from a location.
          *

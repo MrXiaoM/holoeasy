@@ -24,10 +24,12 @@ public enum VersionEnum implements Comparable<VersionEnum> {
 
     public final int armorstandId;
     public final int droppedItemId;
+
     VersionEnum(int armorstandId, int droppedItemId) {
         this.armorstandId = armorstandId;
         this.droppedItemId = droppedItemId;
     }
+
     VersionEnum() {
         this(-1, -1);
     }

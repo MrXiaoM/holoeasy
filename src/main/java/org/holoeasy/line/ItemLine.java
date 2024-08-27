@@ -20,14 +20,16 @@ public class ItemLine implements ILine<ItemStack> {
     private final MutableState<ItemStack> _mutableStateOf;
     private ILine.PrivateConfig pvt = new ILine.PrivateConfig(this);
     private boolean firstRender = true;
+
     public ItemLine(Plugin plugin, MutableState<ItemStack> obj) {
         if (VersionUtil.isCompatible(VersionEnum.V1_8)) {
             throw new IllegalStateException("This version does not support item lines");
         }
         line = new Line(plugin, EntityType.DROPPED_ITEM);
-        resetVelocity = PacketType.VELOCITY().velocity(line.getEntityID(), 0, 0,0);
+        resetVelocity = PacketType.VELOCITY().velocity(line.getEntityID(), 0, 0, 0);
         _mutableStateOf = obj;
     }
+
     public ItemLine(Plugin plugin, ItemStack obj) {
         this(plugin, new MutableState<>(obj));
     }
@@ -93,7 +95,7 @@ public class ItemLine implements ILine<ItemStack> {
 
         send(player, resetVelocity);
 
-        if(firstRender) {
+        if (firstRender) {
             firstRender = false;
             _mutableStateOf.addObserver(pvt);
         }

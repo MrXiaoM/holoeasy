@@ -19,9 +19,11 @@ public interface ILine<T> {
         private Hologram hologram;
         @Nullable
         private BukkitTask animationTask = null;
+
         public PrivateConfig(ILine<?> line) {
             this.line = line;
         }
+
         public ILine<?> getLine() {
             return line;
         }
@@ -49,10 +51,16 @@ public interface ILine<T> {
     }
 
     Plugin getPlugin();
+
     Type getType();
+
     int getEntityId();
-    @Nullable Location getLocation();
+
+    @Nullable
+    Location getLocation();
+
     T getObj();
+
     PrivateConfig getPvt();
 
     void setLocation(Location value);

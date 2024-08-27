@@ -18,11 +18,13 @@ public class BlockLine implements ILine<ItemStack> {
     private boolean firstRender = true;
     MutableState<ItemStack> _mutableStateOf;
     private PrivateConfig pvt = new ILine.PrivateConfig(this);
+
     public BlockLine(Plugin plugin, MutableState<ItemStack> obj) {
         this.plugin = plugin;
         this._mutableStateOf = obj;
         this.line = new Line(plugin, EntityType.ARMOR_STAND);
     }
+
     public BlockLine(Plugin plugin, ItemStack obj) {
         this(plugin, new MutableState<>(obj));
     }
@@ -89,7 +91,7 @@ public class BlockLine implements ILine<ItemStack> {
 
         this.update(player);
 
-        if(firstRender) {
+        if (firstRender) {
             firstRender = false;
             _mutableStateOf.addObserver(pvt);
         }

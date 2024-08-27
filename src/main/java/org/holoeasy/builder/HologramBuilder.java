@@ -1,11 +1,11 @@
 package org.holoeasy.builder;
 
+import org.bukkit.Location;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
 import org.holoeasy.builder.interfaces.HologramConfigGroup;
 import org.holoeasy.builder.interfaces.HologramRegisterGroup;
 import org.holoeasy.builder.interfaces.HologramSetupGroup;
-import org.bukkit.Location;
-import org.bukkit.inventory.ItemStack;
 import org.holoeasy.hologram.Hologram;
 import org.holoeasy.line.ILine;
 import org.holoeasy.line.ITextLine;
@@ -32,7 +32,7 @@ public class HologramBuilder {
         getInstance().getStaticPool().remove();
     }
 
-    public static Hologram hologram( @NotNull Location location, @NotNull HologramSetupGroup setupGroup) {
+    public static Hologram hologram(@NotNull Location location, @NotNull HologramSetupGroup setupGroup) {
 
         Pair<Service.RegistrationType, Object> registrationType = getInstance().getStaticRegistration();
 
@@ -57,7 +57,7 @@ public class HologramBuilder {
         Hologram holo = new Hologram(holoConfig.plugin, holoConfig.location, holoConfig.loader);
         holo.load(holoConfig.lines.toArray(new ILine[0]));
 
-        if(pool != null) {
+        if (pool != null) {
             pool.takeCareOf(holo);
         }
         return holo;
@@ -90,7 +90,7 @@ public class HologramBuilder {
     }
 
     public static ITextLine clickable(@NotNull String text, float minHitDistance, float maxHitDistance,
-                                 @NotNull Object... args) {
+                                      @NotNull Object... args) {
         return getInstance().textline(
                 text,
                 true,

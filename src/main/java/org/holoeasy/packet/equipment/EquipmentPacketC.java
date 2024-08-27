@@ -3,10 +3,9 @@ package org.holoeasy.packet.equipment;
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
 import com.comphenix.protocol.wrappers.EnumWrappers.ItemSlot;
+import com.comphenix.protocol.wrappers.Pair;
 import org.bukkit.inventory.ItemStack;
 import org.holoeasy.util.VersionEnum;
-
-import com.comphenix.protocol.wrappers.Pair;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +31,6 @@ public class EquipmentPacketC implements IEquipmentPacket {
             packet.getSlotStackPairLists().write(0, pairList);
         });
     }
-
 
 
 }

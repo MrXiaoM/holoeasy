@@ -24,6 +24,7 @@ public class InteractiveHologramPool implements Listener, IHologramPool {
     float maxHitDistance;
     @Nullable
     ClickAction clickAction;
+
     public InteractiveHologramPool(
             HologramPool pool,
             float minHitDistance,
@@ -72,7 +73,7 @@ public class InteractiveHologramPool implements Listener, IHologramPool {
         Bukkit.getScheduler().runTaskAsynchronously(getPlugin(), () -> {
             Player player = e.getPlayer();
 
-            if(clickAction == null) {
+            if (clickAction == null) {
                 if (!e.getAction().equals(Action.LEFT_CLICK_AIR) && !e.getAction().equals(Action.RIGHT_CLICK_AIR)) {
                     return;
                 }
@@ -114,7 +115,7 @@ public class InteractiveHologramPool implements Listener, IHologramPool {
                             }
 
                             AABB.Vec3D intersects = tL.getHitbox().intersectsRay(
-                                new AABB.Ray3D(player.getEyeLocation()), minHitDistance, maxHitDistance
+                                    new AABB.Ray3D(player.getEyeLocation()), minHitDistance, maxHitDistance
                             );
                             if (intersects == null) {
                                 continue;

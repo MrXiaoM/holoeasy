@@ -6,7 +6,10 @@ import com.comphenix.protocol.wrappers.WrappedChatComponent;
 import com.comphenix.protocol.wrappers.WrappedDataValue;
 import com.comphenix.protocol.wrappers.WrappedDataWatcher;
 import org.holoeasy.util.VersionEnum;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 import static org.holoeasy.util.ClosedRange.rangeSingle;
 import static org.holoeasy.util.Serializers.BOOL_SERIALIZER;
@@ -14,6 +17,7 @@ import static org.holoeasy.util.Serializers.BYTE_SERIALIZER;
 
 public class MetadataTextPacketE implements IMetadataTextPacket {
     public static final MetadataTextPacketE INSTANCE = new MetadataTextPacketE();
+
     @Override
     public List<org.holoeasy.util.ClosedRange<VersionEnum>> versionSupport() {
         return rangeSingle(VersionEnum.V1_20, VersionEnum.LATEST);

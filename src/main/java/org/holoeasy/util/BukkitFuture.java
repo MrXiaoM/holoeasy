@@ -20,6 +20,7 @@ package org.holoeasy.util;
 
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
+
 import java.util.concurrent.CompletableFuture;
 import java.util.function.BiConsumer;
 import java.util.function.Supplier;
@@ -30,9 +31,10 @@ public class BukkitFuture {
      * value obtained by calling the given Supplier.
      *
      * @param supplier a function returning the value to be used to complete the returned
-     * CompletableFuture
+     *                 CompletableFuture
      * @param <T>      the function's return type
-    </T> */
+     *                 </T>
+     */
     public static <T> CompletableFuture<T> supplyAsync(
             Plugin plugin,
             Supplier<T> supplier
@@ -75,9 +77,10 @@ public class BukkitFuture {
      * value obtained by calling the given Supplier.
      *
      * @param supplier a function returning the value to be used to complete the returned
-     * CompletableFuture
+     *                 CompletableFuture
      * @param <T>      the function's return type
-    </T> */
+     *                 </T>
+     */
     public static <T> CompletableFuture<T> supplySync(
             Plugin plugin,
             Supplier<T> supplier
@@ -108,8 +111,8 @@ public class BukkitFuture {
      * @param runnable the action to run before completing the returned CompletableFuture
      */
     public static CompletableFuture<Void> runSync(
-        Plugin plugin,
-        Runnable runnable
+            Plugin plugin,
+            Runnable runnable
     ) {
         CompletableFuture<Void> future = new CompletableFuture<>();
         if (Bukkit.isPrimaryThread()) {
@@ -136,12 +139,13 @@ public class BukkitFuture {
      * Helper method to avoid boilerplate in CompletableFuture#whenComplete .
      *
      * @param action the BiConsumer of the whenComplete method that will be executed in the runnable
-     * synchronously.
+     *               synchronously.
      * @param <T>    the function's return type
-    </T> */
+     *               </T>
+     */
     public static <T> BiConsumer<T, Throwable> sync(
-        Plugin plugin,
-        BiConsumer<T, Throwable> action
+            Plugin plugin,
+            BiConsumer<T, Throwable> action
     ) {
         return (t, throwable) -> runSync(plugin, () -> action.accept(t, throwable));
     }

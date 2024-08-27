@@ -8,9 +8,11 @@ public class MutableState<T> {
 
     private List<Observer> observers = new ArrayList<Observer>();
     private T value;
+
     public MutableState(T value) {
         this.value = value;
     }
+
     public T get() {
         return value;
     }

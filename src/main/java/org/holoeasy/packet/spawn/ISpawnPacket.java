@@ -13,6 +13,7 @@ public interface ISpawnPacket extends IPacket {
     ) {
         return spawn(entityId, entityType, location, null);
     }
+
     PacketContainer spawn(
             int entityId, EntityType entityType, Location location,
             @Nullable Plugin plugin

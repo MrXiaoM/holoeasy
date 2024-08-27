@@ -12,6 +12,7 @@ import static org.holoeasy.util.ClosedRange.rangeSingle;
 
 public class MetadataTextPacketA implements IMetadataTextPacket {
     public static final MetadataTextPacketA INSTANCE = new MetadataTextPacketA();
+
     @Override
     public List<org.holoeasy.util.ClosedRange<VersionEnum>> versionSupport() {
         return rangeSingle(VersionEnum.V1_8, VersionEnum.V1_8);
@@ -23,7 +24,7 @@ public class MetadataTextPacketA implements IMetadataTextPacket {
 
         if (invisible) watcher.setObject(0, (byte) 0x20);
 
-        if(nameTag != null) {
+        if (nameTag != null) {
             watcher.setObject(2, nameTag);
             watcher.setObject(3, (byte) 1);
         }

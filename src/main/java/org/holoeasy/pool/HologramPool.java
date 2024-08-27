@@ -21,7 +21,8 @@ public class HologramPool implements Listener, IHologramPool {
     Map<UUID, Hologram> holograms = new ConcurrentHashMap<>();
     Plugin plugin;
     double spawnDistance;
-    public HologramPool(Plugin plugin, double spawnDistance)  {
+
+    public HologramPool(Plugin plugin, double spawnDistance) {
         this.plugin = plugin;
         this.spawnDistance = spawnDistance;
         Bukkit.getPluginManager().registerEvents(this, plugin);

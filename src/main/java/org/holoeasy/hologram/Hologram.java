@@ -6,7 +6,9 @@ import org.bukkit.plugin.Plugin;
 import org.holoeasy.line.ILine;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.*;
+import java.util.List;
+import java.util.Set;
+import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -17,6 +19,7 @@ public class Hologram {
     private final List<ILine<?>> hLines = new CopyOnWriteArrayList<>(); // writes are slow and Iterators are fast and consistent.
 
     private Location location;
+
     public Hologram(Plugin plugin, Location location, IHologramLoader loader) {
         this.plugin = plugin;
         this.location = location;

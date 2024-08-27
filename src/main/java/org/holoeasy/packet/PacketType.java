@@ -39,13 +39,14 @@ public class PacketType {
         }
 
         throw new RuntimeException(
-            "No version support for this packet\n" +
-            "Set HoloEasy.useLastSupportedVersion to true or\n" +
-            "open an issue at https://github.com/unldenis/holoeasy"
+                "No version support for this packet\n" +
+                        "Set HoloEasy.useLastSupportedVersion to true or\n" +
+                        "open an issue at https://github.com/unldenis/holoeasy"
         );
     }
 
     private static IDeletePacket delete = null;
+
     public static IDeletePacket DELETE() {
         if (delete != null) return delete;
         return delete = getCurrImpl(
@@ -55,6 +56,7 @@ public class PacketType {
     }
 
     private static IMetadataTextPacket metadataText = null;
+
     public static IMetadataTextPacket METADATA_TEXT() {
         if (metadataText != null) return metadataText;
         return metadataText = getCurrImpl(
@@ -67,6 +69,7 @@ public class PacketType {
     }
 
     private static IMetadataItemPacket metadataItem = null;
+
     public static IMetadataItemPacket METADATA_ITEM() {
         if (metadataItem != null) return metadataItem;
         return metadataItem = getCurrImpl(
@@ -79,6 +82,7 @@ public class PacketType {
     }
 
     private static ISpawnPacket spawn = null;
+
     public static ISpawnPacket SPAWN() {
         if (spawn != null) return spawn;
         return spawn = getCurrImpl(
@@ -90,6 +94,7 @@ public class PacketType {
     }
 
     private static ITeleportPacket teleport = null;
+
     public static ITeleportPacket TELEPORT() {
         if (teleport != null) return teleport;
         return teleport = getCurrImpl(
@@ -99,18 +104,21 @@ public class PacketType {
     }
 
     private static IVelocityPacket velocity = null;
+
     public static IVelocityPacket VELOCITY() {
         if (velocity != null) return velocity;
         return velocity = getCurrImpl(VelocityPacketA.INSTANCE);
     }
 
     private static IRotatePacket rotate = null;
+
     public static IRotatePacket ROTATE() {
         if (rotate != null) return rotate;
         return rotate = getCurrImpl(RotatePacketA.INSTANCE);
     }
 
     private static IEquipmentPacket equipment = null;
+
     public static IEquipmentPacket EQUIPMENT() {
         if (equipment != null) return equipment;
         return equipment = getCurrImpl(

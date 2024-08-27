@@ -3,7 +3,6 @@ package org.holoeasy.animation;
 import com.comphenix.protocol.events.PacketContainer;
 import com.google.common.util.concurrent.AtomicDouble;
 import org.bukkit.Bukkit;
-
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitTask;
 import org.holoeasy.hologram.Hologram;
@@ -32,6 +31,7 @@ public enum Animations {
     });
 
     public final Function<ILine<?>, BukkitTask> task;
+
     Animations(Function<ILine<?>, BukkitTask> task) {
         this.task = task;
     }

@@ -14,6 +14,7 @@ import static org.holoeasy.util.ClosedRange.rangeSingle;
 
 public class TeleportPacketB implements ITeleportPacket {
     public static final TeleportPacketB INSTANCE = new TeleportPacketB();
+
     @Override
     public List<org.holoeasy.util.ClosedRange<VersionEnum>> versionSupport() {
         return rangeSingle(VersionEnum.V1_9, VersionEnum.LATEST);

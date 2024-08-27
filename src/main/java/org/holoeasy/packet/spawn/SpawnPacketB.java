@@ -10,7 +10,8 @@ import org.holoeasy.util.VersionEnum;
 import org.holoeasy.util.VersionUtil;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.*;
+import java.util.List;
+import java.util.UUID;
 
 import static org.holoeasy.packet.PacketBuilder.packet;
 import static org.holoeasy.util.ClosedRange.rangeSingle;

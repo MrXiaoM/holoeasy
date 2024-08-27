@@ -13,6 +13,7 @@ import static org.holoeasy.util.ClosedRange.rangeSingle;
 
 public class DeletePacketB implements IDeletePacket {
     public static final DeletePacketB INSTANCE = new DeletePacketB();
+
     @Override
     public List<org.holoeasy.util.ClosedRange<VersionEnum>> versionSupport() {
         return rangeSingle(VersionEnum.V1_17, VersionEnum.LATEST);

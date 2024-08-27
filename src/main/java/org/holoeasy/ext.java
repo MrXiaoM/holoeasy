@@ -23,12 +23,15 @@ public class ext {
     public static byte compressAngle(double d) {
         return (byte) (int) (d * 256f / 360f);
     }
+
     public static int fixCoordinate(double d) {
         return (int) floor(d * 32.0);
     }
+
     public static ILine<?> get(Hologram hologram, int index) {
         return hologram.lineAt(index);
     }
+
     public static Object bukkitGeneric(ItemStack item) {
         return BukkitConverters.getItemStackConverter().getGeneric(item);
     }
@@ -54,6 +57,7 @@ public class ext {
             packet.getWatchableCollectionModifier().write(0, watcher.getWatchableObjects());
         }
     }
+
     public static <T> void set(StructureModifier<T> modifier, int index, T value) {
         modifier.write(index, value);
     }
@@ -65,6 +69,7 @@ public class ext {
         );
         watcher.setObject(obj, value);
     }
+
     public static void setString(WrappedDataWatcher watcher, int index, String value) {
         WrappedDataWatcherObject obj = new WrappedDataWatcherObject(
                 index,
@@ -72,6 +77,7 @@ public class ext {
         );
         watcher.setObject(obj, value);
     }
+
     public static void setBool(WrappedDataWatcher watcher, int index, boolean value) {
         WrappedDataWatcherObject obj = new WrappedDataWatcherObject(
                 index,
@@ -79,6 +85,7 @@ public class ext {
         );
         watcher.setObject(obj, value);
     }
+
     public static void setVectorSerializer(WrappedDataWatcher watcher, int index, Object value) {
         WrappedDataWatcherObject obj = new WrappedDataWatcherObject(
                 index,
@@ -86,6 +93,7 @@ public class ext {
         );
         watcher.setObject(obj, value);
     }
+
     public static void setChatComponent(WrappedDataWatcher watcher, int index, String value) {
         Optional<Object> opt = Optional.of(WrappedChatComponent.fromChatMessage(value)[0].getHandle());
         watcher.setObject(new WrappedDataWatcherObject(

@@ -13,6 +13,7 @@ import static org.holoeasy.util.ClosedRange.rangeSingle;
 
 public class DeletePacketA implements IDeletePacket {
     public static final DeletePacketA INSTANCE = new DeletePacketA();
+
     @Override
     public List<ClosedRange<VersionEnum>> versionSupport() {
         return rangeSingle(VersionEnum.V1_8, VersionEnum.V1_16);
@@ -22,7 +23,7 @@ public class DeletePacketA implements IDeletePacket {
     @Override
     public PacketContainer delete(int entityId) {
         return packet(PacketType.Play.Server.ENTITY_DESTROY, packet -> {
-            packet.getIntegerArrays().write(0, new int[] { entityId });
+            packet.getIntegerArrays().write(0, new int[]{entityId});
         });
     }
 }

@@ -6,7 +6,8 @@ import com.comphenix.protocol.wrappers.WrappedDataWatcher;
 import com.comphenix.protocol.wrappers.WrappedDataWatcher.WrappedDataWatcherObject;
 import org.bukkit.inventory.ItemStack;
 import org.holoeasy.util.VersionEnum;
-import java.util.*;
+
+import java.util.List;
 
 import static org.holoeasy.ext.bukkitGeneric;
 import static org.holoeasy.ext.parse119;
@@ -31,12 +32,12 @@ public class MetadataItemPacketD implements IMetadataItemPacket {
         WrappedDataWatcher watcher = new WrappedDataWatcher();
 
         WrappedDataWatcherObject gravity = new WrappedDataWatcherObject(
-            5, BOOL_SERIALIZER()
+                5, BOOL_SERIALIZER()
         );
         watcher.setObject(gravity, true);
 
         WrappedDataWatcherObject itemSer = new WrappedDataWatcherObject(
-            8, ITEM_SERIALIZER()
+                8, ITEM_SERIALIZER()
         );
         watcher.setObject(itemSer, bukkitGeneric(item));
 

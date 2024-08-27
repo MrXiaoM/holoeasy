@@ -23,6 +23,7 @@ import static org.holoeasy.util.ClosedRange.rangeSingle;
 
 public class SpawnPacketA implements ISpawnPacket {
     public static final SpawnPacketA INSTANCE = new SpawnPacketA();
+
     private CompletableFuture<Void> loadDefaultWatcher(Plugin plugin) {
         return BukkitFuture.runSync(plugin, () -> {
             World world = Bukkit.getWorlds().get(0);
